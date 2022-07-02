@@ -1,0 +1,85 @@
+{% extends 'layout.html' %}
+{% block body %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Druid Detector</title>
+    <style type="text/css">
+body {
+  background: linear-gradient(to right, grey, black);
+  color: #D7D7EF;
+  font-family: 'Lato', sans-serif;
+}
+
+</style>
+  </head>
+<!-- Upload Area -->
+<body>
+  <div class="container-fluid mt-3">
+    <div class="row">
+
+      <table class="table-hover table table-dark">
+ <tbody>
+ <tr>
+
+      <th scope="row">File Name:</th>
+      <td>{{data.apkname}}</td>
+    </tr>
+    <tr>
+      <th scope="row">SHA256 Hash:</th>
+      <td>{{data.sha256hash}}</td>
+    </tr>
+<tr>
+      <th scope="row">Result:</th>
+      <td>{{data.result}}</td>
+    </tr>
+  <tr>
+      <th scope="row">Permission-based Model Result:</th>
+      <td>{{data.model_permission_result}}</td>
+    </tr>
+   <tr>
+      <th scope="row">Dex-based Model Result:</th>
+      <td>{{data.model_dex_result}}</td>
+    </tr>
+  </tbody>
+</table>
+
+    </div>
+      <div class="row mt-5">
+      <div class="col-md-6">
+                  <h1 class="text-center">APK Permission</h1>
+
+<table class="table-hover table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Permission Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for perm in perms %}
+    <tr>
+      <th scope="row">{{ loop.index }}</th>
+      <td>{{perm}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+</div>
+      <div class="col-md-6">
+
+          <h1 class="text-center">APK Dex Image</h1>
+            <div class="p-3">
+
+          <img src="..\static\{{data.dex_image_name}}">
+</div>
+    </div>
+    </div>
+    </div>
+  </div>
+
+  
+  </body>
+</html>
+{% endblock %}

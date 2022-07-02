@@ -1,0 +1,54 @@
+{% extends 'layout.html' %}
+{% block body %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Druid Detector</title>
+    <style type="text/css">
+body {
+  background: linear-gradient(to right, grey, black);
+  color: #D7D7EF;
+  font-family: 'Lato', sans-serif;
+}
+table {
+    table-layout: fixed;
+    
+   word-wrap: break-word;
+}
+
+</style>
+  </head>
+<!-- Upload Area -->
+<body>
+  <div class="container-fluid mt-3">
+    <div class="row">
+<table class="table-hover table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">App Name</th>
+      <th scope="col">SHA256 Hash</th>
+      <th scope="col">Result</th>
+      <th scope="col">Uploader</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for item in data %}
+    <tr>
+      <th scope="row">{{ item.id }}</th>
+      <td>{{item.apkname}}</td>
+      <td>{{item.sha256hash}}</td>
+      <td>{{item.result}}</td>
+      <td>{{item.uploader}}</td>
+      <td><a class="btn btn-success" href="result/{{item.procid}}">show report</td>
+
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+    </div>
+   
+  </body>
+</html>
+{% endblock %}
