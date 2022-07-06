@@ -28,6 +28,7 @@ print("Num GPUs Available: ", len(tf.config.experimental.list_physical_devices('
 
 ## Result
 Our framework reached 94.81% accuracy in dex-based CNN model, also reached 97.02% accuracy in permission-based CNN model
+
 <img src="https://user-images.githubusercontent.com/63113401/177514576-9bc6d066-8cd6-4cd2-8ac9-e53febdc2c06.png" width="300" height="300" />
 
 
