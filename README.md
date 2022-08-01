@@ -1,5 +1,5 @@
 # DruidDetector
-DruidDetector is a web framework (Flask-based) that takes Android APK file and analyze it to extract features (permission-based, gray-image based) using static analysis and pass them to multiple ensembled deep learning models for apk malware detection.
+DruidDetector is a web framework (Flask-based) that takes Android APK file and analyze it to extract features (permission-based, dex-to-image based) using static analysis and pass them to multiple ensembled deep learning models for apk malware detection.
 
 ## Prerequest:
 the project is depending on GPU so make sure that you install
